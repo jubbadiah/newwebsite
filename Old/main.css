@@ -1,0 +1,53 @@
+html {
+    margin: 20px auto;
+    max-width: 1200px;
+    font-family: 'Roboto Mono', monospace;
+}
+header {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Roboto Mono', monospace;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav a{
+    font-size: 18px;
+    margin: 10px;
+    text-decoration: none;
+    color:black;
+}
+
+.nav a:hover{
+    color: white;
+    background-color: black;
+}
+
+.socialmedia a{
+    margin: 9px;
+    font-size: 30px;
+    text-decoration: none;
+    color:black;
+}
+
+.socialmedia a:hover{
+    color:black;
+    opacity: 0.5;
+}
+
+.login {
+    font-size: 30px;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 22px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}

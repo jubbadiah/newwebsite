@@ -1,0 +1,114 @@
+html {
+    margin: 20px auto;
+    max-width: 1200px;
+    font-family: 'Roboto Mono', monospace;
+}
+header {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Roboto Mono', monospace;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav a{
+    font-size: 16px;
+    margin: 50px;
+    text-decoration: none;
+    color:#000000;
+}
+
+.nav a:hover{
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.socialmedia a{
+    margin: 9px;
+    font-size: 30px;
+    text-decoration: none;
+    color:#000000;
+}
+
+.socialmedia a:hover{
+    color:#000000;
+    opacity: 0.5;
+}
+
+.login {
+    font-size: 30px;
+}
+
+button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    font-size: 22px;
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+table {
+    margin: 0 auto;
+    word-spacing: 4px;
+    column-gap: 0px;
+}
+
+table a {
+    text-decoration: none;
+    color:#000000;
+}
+
+table a:hover{
+    color: #ffffff;
+    background-color: #000000;
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+h2 { 
+    font-size: 25px;
+    text-align: center;
+}
+
+h2 a{
+    color: #000000;
+    text-decoration: none;
+}
+
+h2 a:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+p {
+    font-size: 40px;
+    text-align: center;
+}
+
+.bottomimage {
+    padding-bottom: 40px;
+}
+
+footer {
+    text-align: center;
+    bottom: 0;
+}
+
+.socialmedia a{
+    margin: 9px;
+    font-size: 30px;
+    text-decoration: none;
+    color:#000000;
+}
+
+.socialmedia a:hover{
+    color:#000000;
+    opacity: 0.5;
+}
