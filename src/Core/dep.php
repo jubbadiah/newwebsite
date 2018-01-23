@@ -44,3 +44,20 @@ $container['LoginController'] = function($container) {
     $view = $container->get('view');
     return new \Jubby\Controller\LoginController($view);
 };
+
+$container['SignupController'] = function($container) {
+    $view = $container->get('view');
+    return new \Jubby\Controller\SignupController($view);
+};
+
+$capsule = new \Illuminate\Database\Capsule\Manager;
+$capsule->addConnection($container['settings']['db']);
+
+$capsule->setAsGlobal();
+$capsule->bootEloquent();
+
+$container['db'] = function($container) {
+    
+
+    return $capsule;
+};

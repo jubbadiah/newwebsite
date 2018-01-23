@@ -10,4 +10,7 @@ $app->get('/contact', 'ContactController:get');
 
 $app->get('/about', 'AboutController:get'); 
 
-$app->get('/login', 'LoginController:get'); 
+$app->get('/login', 'LoginController:get');
+
+$app->get('/signup', 'SignupController:get'); 
+$app->post('/signup', 'SignupController:post'); 
