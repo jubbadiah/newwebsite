@@ -23,7 +23,7 @@ class LoginController
 
         $user = Jubby\Model\User::where('username', $post['username'])->first();
 
- if (!$user) {
+        if (!$user) {
             //user not found
         }
 

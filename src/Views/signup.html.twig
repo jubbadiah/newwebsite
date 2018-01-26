@@ -9,29 +9,39 @@
     {% else %}
             <div class="signup">
     <form action="/signup" method="post">
-        <label>
-        <b>Username</b>
-    </label>    
-    <input type="text" placeholder="Enter Username" name="username" required>
+        <ul>
+            <li>
+                <label>
+                    <b>Username</b>
+                    <input type="text" placeholder="Enter Username" name="username" required>
+                </label>
+            </li>
 
-    <label>
-        <b>Email</b>
-    </label>    
+            <li>
+                <label>
+                    <b>Email</b>
+                    <input type="email" placeholder="Email Address" name="email" required>
+                </label>    
+            </li>
 
-    <input type="email" placeholder="Email Address" name="email" required>
-<br>
-    <label>
-        <b>Password</b>
-    </label>
+            <li>
+                <label>
+                    <b>Password</b>
+                    <input type="password" placeholder="Enter Password" name="password" required>
+                </label>
+            </li>
 
-    <input type="password" placeholder="Enter Password" name="password" required>
-    <label>
-        <b>Confirm password</b>
-    </label>    
-
-    <input type="password" placeholder="Retype Password" name="password-check" required>
-<br>
-    <button type="submit">Signup</button>
+            <li>
+                <label>
+                    <b>Confirm password</b>
+                    <input type="password" placeholder="Retype Password" name="password-check" required>
+                </label>    
+            </li>
+            
+            <li>
+                    <button type="submit">Signup</button>
+            </li>
+        </ul>
     </form>
     </div>
     {% endif %}

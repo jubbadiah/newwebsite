@@ -5,21 +5,29 @@
 {% block content %}
 <div class="login" align="center">
 <form action="/login" method="get">
-        <label>
+    <ul>
+        <li>
+            <label>
             <b>Username</b>
-        </label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+            </label>
+        </li>
 
-        <label>
+        <li>
+            <label>
             <b>Password</b>
-        </label>
-        <input type="password" placeholder="Enter Password" name="password" required>
-
-        <button type="submit" name"submit" value="Login!">Login</button>
+            <input type="password" placeholder="Enter Password" name="password" required>
+            </label>
+        </li>
         
-        <input type="checkbox" checked="checked"> Remember me
-        <br><br>
-        <a href="./signup">SignUp!</a>
+        <li>
+            <input type="checkbox" checked="checked"> Remember me
+        </li>
+
+        <li>        
+            <button type="submit" name"submit" value="Login!">Login</button>
+        </li>
+    </ul>
 </form>
     </div>
 {% endblock %}
