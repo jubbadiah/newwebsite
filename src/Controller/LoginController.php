@@ -18,25 +18,35 @@ class LoginController
     public function post($request, $response, $args)
     {
         $post = $request->getParsedBody();
-
-        //check username exsists
-
-        $user = Jubby\Model\User::where('username', $post['username'])->first();
+        $user = $this->getUserByUserName($post["username"]);
 
         if (!$user) {
-            //user not found
+            return $this->returnError();
         }
 
-        if ($user->password !== $post['password']) {
-            //p/w doesnt match = error
+        if (!$this->passwordMatch($user,$post["password"])) {
+            return $this->returnError();
         }
 
         $_SESSION["loggedin"] = true;
-        //check p/w matching + session
-        //p/w match > login
+        $_SESSION['username'] = $user->username;
+        return $response->withRedirect('/');
+    }
 
+    private function getUserByUserName($userName)
+    {
+        return \Jubby\Model\User::where('username', $userName)->first();
+    }
+
+    private function passwordMatch($user,$password)
+    {
+        return \password_verify($password, $user->password);
+    }
+
+    private function returnError()
+    {
         return $this->view->render($response, 'login.html.twig', [
-            'completed' => true,
+            'error' => true,
         ]);
     }
 }

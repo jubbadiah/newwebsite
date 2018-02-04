@@ -11,6 +11,7 @@ $container['view'] = function ($container) {
     
     $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
     $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
+    $view->getEnvironment()->addGlobal('session', $_SESSION);
 
     return $view;
 };
@@ -49,6 +50,17 @@ $container['SignupController'] = function($container) {
     $view = $container->get('view');
     return new \Jubby\Controller\SignupController($view);
 };
+
+$container['AccountController'] = function($container) {
+    $view = $container->get('view');
+    return new \Jubby\Controller\AccountController($view);
+};
+
+$container['LogoutController'] = function($container) {
+    $view = $container->get('view');
+    return new \Jubby\Controller\LogoutController($view);
+};
+
 
 $capsule = new \Illuminate\Database\Capsule\Manager;
 $capsule->addConnection($container['settings']['db']);

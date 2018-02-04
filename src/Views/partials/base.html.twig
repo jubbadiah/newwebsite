@@ -19,7 +19,7 @@
     <header>
         <div class="logo">
             <a href="/">
-                <img src="./images/logo.png">
+                <img src="./images/Logo.png">
             </a>
         </div>
 
@@ -32,9 +32,17 @@
 
             <a href="./about">About</a>
 
+{% if session.loggedin %}
+            
+            <a href="./account">{{ session.username }}</a>
+
+            <a href="/logout">Log out</a>
+
+{% else %}
             <a href="./signup">Sign up</a>
 
             <a href="./login">Login</a>
+{% endif %}
         </div>
     </header>
 

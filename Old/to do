@@ -13,11 +13,11 @@ Post
 Send email
 
 **complete on website**
-1.validate form request in js + return errors
+1. create play and pause js
 
-2.validate form request in php + return errors
+2. create basket and table for basket
 
-3. hash password using salt
 
-4.insert all fields into the data base
+
+if and when - flash messages slim.
 

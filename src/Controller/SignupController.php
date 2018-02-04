@@ -24,7 +24,7 @@ class SignupController
 
         $user = new User;
         $user->username = $post['username'];
-        $user->password = $post['password'];
+        $user->password = password_hash($post['password'], PASSWORD_DEFAULT);
         $user->email = $post['email'];
         $user->save();
         

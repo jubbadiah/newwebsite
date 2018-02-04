@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require '../vendor/autoload.php';
 
 $settings = require '../src/Core/settings.php'; //used to call settings

@@ -1,0 +1,9 @@
+Old
+.vscode
+vendor
+dump.sql
+src/Core/settings.php
+deploy.sh
+.git
+.gitignore
+exclude.txt
