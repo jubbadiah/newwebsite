@@ -5,7 +5,7 @@ wrappers.forEach(wrapper => {
 
     const barSize = 120;
     const bar = document.querySelector('#defaultBar');
-    const progress = document.querySelector('#progressBar');
+    const progressBar = document.querySelector('#progressBar');
 
     const currentTime = wrapper.querySelector('#current');
     const durTime = wrapper.querySelector('#duration');
