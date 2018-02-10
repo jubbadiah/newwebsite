@@ -73,6 +73,7 @@ button {
     color: #ffffff;
     border: none;
     font-size: 22px;
+    outline: none;
 }
 
 button:hover {
@@ -88,6 +89,7 @@ button:hover {
     font-size: 35px;
     margin: 10px 0;
     border: solid 3px #000000;
+    outline: none;
 }
 
 .wrapper {
@@ -106,6 +108,7 @@ button:hover {
     border-bottom-color: #000000;
     border-top: solid;
     border-top-color: #000000;
+    outline: none;
 }
   
 #playSound{
@@ -113,6 +116,7 @@ button:hover {
     left: 20px;
     width: 20px;
     height: 20px;
+    outline: none;
 }
   
 #stopSound{
@@ -121,23 +125,18 @@ button:hover {
     left: 50px;
     width: 20px;
     height: 20px;
-}
-
-.progressBar{
-    position: absolute;
-    height: 10px;
-    background-color: #000000;
-    width: 0px;
+    outline: none;
 }
 
 .playButton{
-    background-color: white;
+    background-color: #ffffff;
     border: none;
     height: 32px;
     width: 32px;
     background-image: url(/images/play.png);
     background-repeat: no-repeat;
     background-position: center;
+    outline: none;
 }
 
 .muteButton{
@@ -145,14 +144,41 @@ button:hover {
     border: none;
     height: 32px;
     width: 32px;
-    background-image: url(/speaker.png);
+    background-image: url(/images/speaker.png);
     background-repeat: no-repeat;
     background-position: center;
+    cursor: pointer;
 }
 
 .muteButton:active,#playButton:active {
     position: relative; 
     top:2px;
+    outline: none;
+}
+
+#timebox{
+    display:inline-block;
+    width: 109px;
+    background: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-size: 15px;
+    white-space:nowrap;
+}
+
+#defaultBar{
+    position: relative;
+    width: 120px;
+    height: 20px;
+    background-color: blue;
+}
+
+#progressBar{
+    position: absolute;
+    height: 20px;
+    background-color: green;
+    width: 0px;
+
 }
 
 table {
@@ -189,6 +215,17 @@ h2 a{
 h2 a:hover {
     background-color: #000000;
     color: #ffffff;
+}
+
+h3 {
+    display:inline-block;
+    width: 80px;
+    background: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-size: 15px;
+    white-space:nowrap;
+    letter-spacing: 1px;
 }
 
 p {

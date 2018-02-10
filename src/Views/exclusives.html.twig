@@ -2,24 +2,26 @@
 {% block title %}Exclusives{% endblock %}
 
 {% block content %}
-<script type="text/javascript" src="/js/controls.js"></script>
+
+<script type="text/javascript" src="/js/playpause.js" defer></script>
 
 <div class="wrappercontainer">
 		<div class="wrapper" id="dubstep">
-			<h2>Godzilla</h2>
+			<h3>Godzilla</h3>
 			<audio class="myTrack">
 				<source src="./audio/Godzilla.mp3" type="audio/mp3" />
 				<source src="./audio/Godzilla.ogg" type="audio/ogg" />
 			</audio>
-			<nav>
-								<div id="defaultBar">
-									<div id="progressBar"></div>
-								</div>
+
 			<div id="buttons">
 				<button type="button" class="playButton"></button>
-				<button type="button" class="muteButton"></button>
-									<span id="currentTime">0:00</span>/
-                <span id="fullDuration">0:00</span>
+			</div>
+
+			<div id="timebox">
+				<span id="current">00:00</span>
+						<div id="defaultBar"><div id="progressBar"></div>
+					</div>
+				<span id="duration">00:00</span>
 			</div>
 		</div>
 </div>
