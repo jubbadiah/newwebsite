@@ -81,6 +81,10 @@ button:hover {
     color: #000000;
 }
 
+.buttons {
+    margin-top: -20px;
+}
+
 .wrappercontainer {
     display: flex;
     flex-direction: row;
@@ -94,6 +98,9 @@ button:hover {
 
 .wrapper {
     width: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .wrapper:not(:last-child) {
@@ -150,35 +157,33 @@ button:hover {
     cursor: pointer;
 }
 
-.muteButton:active,#playButton:active {
+.muteButton:active,
+.playButton:active {
     position: relative; 
     top:2px;
     outline: none;
 }
 
-#timebox{
-    display:inline-block;
-    width: 109px;
+.timebox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
     background: #ffffff;
-    text-align: center;
     color: #000000;
     font-size: 15px;
     white-space:nowrap;
 }
 
-#defaultBar{
-    position: relative;
-    width: 120px;
+.progressBar{
     height: 20px;
-    background-color: blue;
+    background-color: #fff;
+    width: 120px;
 }
 
-#progressBar{
-    position: absolute;
-    height: 20px;
-    background-color: green;
-    width: 0px;
-
+progress::-moz-progress-bar,
+progress::-moz-progress-bar{
+    background: #000000;
 }
 
 table {
@@ -219,7 +224,6 @@ h2 a:hover {
 
 h3 {
     display:inline-block;
-    width: 80px;
     background: #ffffff;
     text-align: center;
     color: #000000;
