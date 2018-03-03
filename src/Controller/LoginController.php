@@ -21,11 +21,11 @@ class LoginController
         $user = $this->getUserByUserName($post["username"]);
 
         if (!$user) {
-            return $this->returnError();
+            return $this->returnError($response);
         }
 
         if (!$this->passwordMatch($user,$post["password"])) {
-            return $this->returnError();
+            return $this->returnError($response);
         }
 
         $_SESSION["loggedin"] = true;
@@ -43,7 +43,7 @@ class LoginController
         return \password_verify($password, $user->password);
     }
 
-    private function returnError()
+    private function returnError($response)
     {
         return $this->view->render($response, 'login.html.twig', [
             'error' => true,

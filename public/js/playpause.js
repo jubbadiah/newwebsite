@@ -9,9 +9,7 @@ wrappers.forEach(wrapper => {
 
     const currentTime = wrapper.querySelector('.current');
     const durTime = wrapper.querySelector('.duration');
-    const duration = myTrack.duration;
-
-    wrapper.querySelector('.duration').innerHTML = secondsToMinutes(duration);
+    let duration = myTrack.duration;
 
     playButton.addEventListener('click', playOrPause, false);
     myTrack.ontimeupdate = function () {
@@ -19,6 +17,15 @@ wrappers.forEach(wrapper => {
 
         let size = (myTrack.currentTime / duration * 100);
         progressBar.value = size;
+    }
+
+    myTrack.onloadedmetadata = function () {
+        duration = myTrack.duration;
+        wrapper.querySelector('.duration').innerHTML = secondsToMinutes(myTrack.duration);
+    }
+
+    myTrack.onpause = function () {
+        playButton.style.backgroundImage = 'url(/images/play.png)';
     }
 
     progressBar.addEventListener('click', function (event) {
@@ -31,9 +38,10 @@ wrappers.forEach(wrapper => {
     function playOrPause() {
         if (!myTrack.paused && !myTrack.ended) {
             myTrack.pause();
-            playButton.style.backgroundImage = 'url(/images/play.png)';
-
         } else {
+            for (const player of document.getElementsByTagName('audio')) {
+                player.pause();
+            }
             myTrack.play();
             playButton.style.backgroundImage = 'url(/images/pause.png)';
         }
@@ -55,7 +63,3 @@ function secondsToMinutes(time) {
 
     return `${minutes}:${seconds}`;
 }
-
-
-
-// get element 

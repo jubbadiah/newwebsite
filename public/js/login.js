@@ -3,9 +3,10 @@
 function check_info() {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
+    let errorSpan = document.querySelector('.error');
 
     if (username === "" || password === "") {
-        alert('Please complete all fields')
+        errorSpan.innerHTML = 'Please complete all fields';
         return false;
     }
     else {
