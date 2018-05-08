@@ -2,57 +2,32 @@
 {% block title %}Buy{% endblock %}
 
 {% block content %}
- <p>
-        <div class="Table">
 
-            <table>
+<table class="thead" width="100%">
+    <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Format</th>
+        <th>Add</th>
+    </tr>
+        
+    <tr>
+        <td></td>
+        <td>Monsters</td>
+        <td></td>
+        <td>    
+            <select>
+                <option value="320">320kb/s</option>
+                <option value="wav">.wav</option>
+                <option value="AAC">AAC</option>
+            </select>
+        </td>
+        <td><i class="fa fa-shopping-basket"></i></td>
+    <tr>
+</table>
 
-                <thead>
-                    <tr>
-                        <th>Track</th>
-                        <th>Cost</th>
-                        <th>Quality</th>
-                        <th>Download</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>Doomed</td>
-                        <!-- row 1 -->
-                        <td>£1.16</td>
-                        <td>320KBPS</td>
-                        <td>
-                            <a href="http://www.junodownload.com/artists/Anti-vibes/" /a>Download
-                                <td>
-                    </tr>
-
-                    <tr>
-                        <td>All Dub Need Sub!</td>
-                        <!-- row 2 -->
-                        <td>£1.16</td>
-                        <td>320KBPS</td>
-                        <td>
-                            <a href="http://www.junodownload.com/artists/Anti-vibes/" /a>Download
-                                <td>
-                                </td>
-
-                                <tr>
-                                    <td>Level 3</td>
-                                    <!-- row 3 -->
-                                    <td>£1.16</td>
-                                    <td>320KBPS</td>
-                                    <td>
-                                        <a href="http://www.junodownload.com/artists/Anti-vibes/" /a>Download
-                                            <td>
-                                            </td>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td>AV</td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-    </p>
+<script type="text/javascript" src="/js/playpause.js" defer></script>
 {% endblock %}
+
+

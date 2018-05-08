@@ -31,6 +31,11 @@ $container['BuyController'] = function($container) {
     return new \Jubby\Controller\BuyController($view);
 };
 
+$container['BasketController'] = function($container) {
+    $view = $container->get('view');
+    return new \Jubby\Controller\BasketController($view);
+};
+
 $container['ContactController'] = function($container) {
     $view = $container->get('view');
     return new \Jubby\Controller\ContactController($view);

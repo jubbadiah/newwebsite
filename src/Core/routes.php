@@ -6,6 +6,9 @@ $app->get('/exclusives', 'ExclusivesController:get'); //confirms location of con
 
 $app->get('/buy', 'BuyController:get'); 
 
+$app->get('/basket', 'BasketController:get'); 
+
+
 $app->get('/contact', 'ContactController:get'); 
 
 $app->get('/about', 'AboutController:get'); 

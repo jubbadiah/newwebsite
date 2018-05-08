@@ -13,11 +13,14 @@ Post
 Send email
 
 **complete on website**
-1. create play and pause js
+. fix css formatting for errors login 
 
-2. create basket and table for basket
+. create basket and table for basket
 
+. create tracks table
 
+. create admin pages for adding tracks and products
 
-if and when - flash messages slim.
+. get stripe set up
 
+. look to see if user accounts have a type

@@ -13,7 +13,7 @@ header {
 
 .nav a{
     font-size: 16px;
-    margin: 40px;
+    margin: 30px;
     /*padding: 0 30px;*/ 
     text-decoration: none;
     color:#000000;
@@ -272,4 +272,30 @@ footer {
     font-weight: bold;
     color: #FF0000;
     font-size: 15px;
+}
+
+.thead {
+    border: 1px solid black;
+}
+
+th {
+    background: #000000;
+    color: #fff;
+}
+
+td {
+    color: #000000;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+.proceed {
+    float: right;
+}
+
+select {
+    background: #000000;
+    color: #ffffff;
+    font-size: 16px;
 }
