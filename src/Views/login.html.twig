@@ -3,10 +3,6 @@
 
 
 {% block content %}
-{% if error %}
-    <h1>Username or password incorrect</h1>
-{% endif %}
-
 <!-- checking info has been added -->
 <script type="text/javascript" src="/js/signup.js"></script>
 
@@ -38,6 +34,12 @@
         <li>
             <span class="error"></span>
         </li>
+
+        {% if error %}
+        <li>
+        <span class="error">Username or password incorrect</span>
+        </li>
+        {% endif %}
     </ul>
     <script type="text/javascript" src="/js/login.js"></script>
 </form>

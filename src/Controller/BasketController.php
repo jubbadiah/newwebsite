@@ -14,6 +14,4 @@ class BasketController
     {
         return $this->view->render($response, 'basket.html.twig');
     }
-
-    
 }
