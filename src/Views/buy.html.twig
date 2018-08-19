@@ -3,35 +3,14 @@
 
 {% block content %}
 
-<table class="thead" width="100%" method="GET">
-    <tr>
-        <th></th>
-        <th>Title</th>
-        <th>Genre</th>
-        <th>Format</th>
-        <th>Add</th>
-    </tr>
-        
-    <tr>
-        <td></td>
-        <td>Monsters</td>
-        <td></td>
-        <td>    
-            <select>
-                <option value="320">320kb/s</option>
-                <option value="wav">.wav</option>
-                <option value="AAC">AAC</option>
-            </select>
-        </td>
-        <td><i class="fa fa-shopping-basket"></i></td>
-    <tr>
-    <tr>
-        <td>Total</td>
-        <td><td>
-    <tr>
-</table>
+<div>
+    {% for product in products %}
+        <h2>{{ product.trackname }}</h2>
+    {% endfor %}
+</div>
 
-<script type="text/javascript" src="/js/playpause.js" defer></script>
 {% endblock %}
 
 
+{# product(db).trackname(row) #}
+{# To do: Create a table using css grids  #}
