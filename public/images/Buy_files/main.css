@@ -302,36 +302,15 @@ select {
 
 .grid-container {
     display: grid;
-    position: sticky;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1em;
-    grid-auto-rows: minmax(100px, auto); /*makes hight automatically increase for text amount */
-    font-weight: bold;
-}
-
-.grid-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1em;
-    grid-auto-rows: minmax(100px, auto);
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-column-gap: 1em;
 }
 
 .grid-container > div{
     background: #eee;
     padding: 1em;
-}
-
+  }
 .grid-container > div:nth-child(odd){
     background: #ddd;
 }
-
-.grid-row > div{
-    background: #ddd;
-    padding: 1em;
-  }
-.grid-row > div:nth-child(odd){
-    background: #eee;
-}
-
-
 
