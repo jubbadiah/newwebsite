@@ -3,25 +3,29 @@
 
 {% block content %}
 
-<div>
-    {% for product in products %}
         <div class="grid-container">
             <div class="grid-header">Track Name</div>
             <div class="grid-header">Track Length</div>
             <div class="grid-header">BPM</div>
             <div class="grid-header">Genre</div>
+            <div class="grid-header">Format</div>
+            <div class="grid-header">Price</div>
+
         </div>
-        </div>
+
+{% for product in products %}
+
         <div class="grid-row">
-            <div class="row1">{{ product.trackname }}</div>
-            <div class="row1">{{ product.tracklength }}</div>
-            <div class="row1">{{ product.bpm }}</div>
-            <div class="row1">{{ product.genre }}</div>
+            <div class="row">{{ product.trackname }}</div>
+            <div class="row">{{ product.tracklength }}</div>
+            <div class="row">{{ product.bpm }}</div>
+            <div class="row">{{ product.genre }}</div>
+            <div class="row">{{ product.format }}</div>
+            <div class="row">£{{ product.price }}</div>
         </div>
-</div>
 {# {{ product.trackname }} #}
-    {% endfor %}
-</div>
+{% endfor %}
+
 
 {% endblock %}
 
