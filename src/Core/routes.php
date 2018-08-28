@@ -7,6 +7,7 @@ $app->get('/exclusives', 'ExclusivesController:get'); //confirms location of con
 $app->get('/buy', 'BuyController:get'); 
 
 $app->get('/basket', 'BasketController:get'); 
+$app->get('/basket/add/{id:[0-9]+}', 'BasketController:add'); 
 
 
 $app->get('/contact', 'ContactController:get'); 

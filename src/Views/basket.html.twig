@@ -3,20 +3,17 @@
 
 {% block content %}
 
-<table class="thead" width="100%">
-    <tr>
-        <th>Title</th>
-        <th>BPM</th>
-        <th>Format</th>
-        <th>Price</th>
-    </tr>
-        
-    <tr>
-        <td>Monsters</td>
-        <td>140</td>
-        <td>.WAV</td>
-        <td>£1.50</td>
-    <tr>
+        <div class="grid-basket">
+            <div class="grid-header">Track Name</div>
+            <div class="grid-header">Format</div>
+            <div class="grid-header">Price</div>
+        </div>
+
+        {% if error %}
+        <li>
+        <span class="error">Product cannot be added</span>
+        </li>
+        {% endif %}
 
 
     <button class="proceed">Proceed to payment</button>

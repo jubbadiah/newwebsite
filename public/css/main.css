@@ -256,7 +256,7 @@ footer {
     margin-top: 15px;
 }
 
-.socialmedia a{
+.socialmedia a {
     margin: 9px;
     font-size: 30px;
     text-decoration: none;
@@ -302,7 +302,16 @@ select {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 1px;
+    grid-auto-rows: minmax(16px, auto); /*makes hight automatically increase for text amount */
+    font-weight: bold;
+    border-style: solid;
+}
+
+.grid-basket {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 1px;
     grid-auto-rows: minmax(16px, auto); /*makes hight automatically increase for text amount */
     font-weight: bold;
@@ -311,10 +320,15 @@ select {
 
 .grid-row {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     grid-gap: 1px;
     border-bottom-style: solid; 
-    border-color: #a2a8b2
+    border-color: #a2a8b2;
+    text-align: center;
+}
+
+i {
+    color: #000000;
 }
 
 .grid-container > div{
@@ -326,6 +340,15 @@ select {
     background: #ddd;
 }
 
+.grid-basket > div{
+    background: #eee;
+    padding: 1em;
+}
+
+.grid-basket > div:nth-child(odd){
+    background: #ddd;
+}
+
 .grid-row > div{
     background: #ddd;
     padding: 1em;
@@ -333,6 +356,7 @@ select {
 .grid-row > div:nth-child(odd){
     background: #eee;
 }
+
 
 
 

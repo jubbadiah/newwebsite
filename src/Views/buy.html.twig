@@ -10,7 +10,7 @@
             <div class="grid-header">Genre</div>
             <div class="grid-header">Format</div>
             <div class="grid-header">Price</div>
-
+            <div class="grid-header"></div>
         </div>
 
 {% for product in products %}
@@ -22,13 +22,13 @@
             <div class="row">{{ product.genre }}</div>
             <div class="row">{{ product.format }}</div>
             <div class="row">£{{ product.price }}</div>
+            <div class="row"><a href="/basket/add/{{ product.id }}"><i class="fa fa-cart-plus"></i></a></div>
         </div>
 {# {{ product.trackname }} #}
 {% endfor %}
 
 
 {% endblock %}
-
 
 {# product(db).trackname(row) #}
 {# To do: Create a table using css grids  #}
