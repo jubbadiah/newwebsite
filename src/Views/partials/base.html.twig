@@ -18,51 +18,51 @@
     <header>
         <div class="logo">
             <a href="/">
-                <img src="./images/Logo.png">
+                <img src="/images/Logo.png">
             </a>
         </div>
 
         <div class="nav">
-            <a href="./exclusives">Previews</a>
+            <a href="/exclusives">Previews</a>
 
-            <a href="./buy">Buy Tracks</a>
+            <a href="/buy">Buy Tracks</a>
 
-            <a href="./contact">Contact</a>
+            <a href="/contact">Contact</a>
 
-            <a href="./about">About</a>
+            <a href="/about">About</a>
 
 {% if session.loggedin %}
             
-            <a href="./account">{{ session.username }}</a>
+            <a href="/account">{{ session.username }}</a>
 
             <a href="/logout">Log out</a>
 
 {% else %}
-            <a href="./signup">Sign up</a>
+            <a href="/signup">Sign up</a>
 
-            <a href="./login">Login</a>
+            <a href="/login">Login</a>
 {% endif %}
 
-            <a href="./basket"><i class="fa fa-shopping-basket"></i></a>
+            <a href="/basket"><i class="fa fa-shopping-basket"></i></a>
         </div>
     </header>
 
 {% block content %}{% endblock %}
     <footer>
             <div class="socialmedia">
-            <a href="https://www.facebook.com/AntiVibesOfficial/" target="_blank">
+            <a href="https://www.facebook.com/AntiVibesOfficial/" target="_blank" rel="noopener noreferrer">
                 <i class="fa fa-facebook-official" aria-hidden="true"></i>
             </a>
-            <a href="https://soundcloud.com/anti-vibes" target="_blank">
+            <a href="https://soundcloud.com/anti-vibes" target="_blank" rel="noopener noreferrer">
                 <i class="fa fa-soundcloud" aria-hidden="true"></i>
             </a>
-            <a href="https://www.instagram.com/jubbydub" target="_blank">
+            <a href="https://www.instagram.com/jubbydub" target="_blank" rel="noopener noreferrer">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
             </a>
-            <a href="https://www.snapchat.com/add/jubbadiah" target="_blank">
+            <a href="https://www.snapchat.com/add/jubbadiah" target="_blank" rel="noopener noreferrer">
                 <i class="fa fa-snapchat" aria-hidden="true"></i>
             </a>
-            <a href="https://www.youtube.com/channel/UCeBtFr6CwFgtW4ySPKAZi0Q" target="_blank">
+            <a href="https://www.youtube.com/channel/UCeBtFr6CwFgtW4ySPKAZi0Q" target="_blank" rel="noopener noreferrer">
                 <i class="fa fa-youtube" aria-hidden="true"></i>
             </a>
         </div>

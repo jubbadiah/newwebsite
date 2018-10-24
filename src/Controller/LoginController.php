@@ -30,7 +30,14 @@ class LoginController
 
         $_SESSION["loggedin"] = true;
         $_SESSION['username'] = $user->username;
-        return $response->withRedirect('/');
+    
+        if ($_SESSION["loggedin"] && $_SESSION['basket']){
+            return $response->withRedirect('/buy');
+        }
+
+        if ($_SESSION["loggedin"]){
+            return $response->withRedirect('/');
+        }
     }
 
     private function getUserByUserName($userName)

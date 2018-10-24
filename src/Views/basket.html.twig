@@ -9,6 +9,15 @@
             <div class="grid-header">Price</div>
         </div>
 
+        {% for item in session.basket %}
+            <div class="basket-row">
+                <div class="row">{{ item.name }}</div>
+                <div class="row">{{ item.format }}</div>
+                <div class="row">£{{ item.price }}</div>
+            </div>
+
+        {% endfor %}
+
         {% if error %}
         <li>
         <span class="error">Product cannot be added</span>

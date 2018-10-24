@@ -24,17 +24,27 @@ class BasketController
                 'error' => true
             ]);
         }
+
+        
+        $_SESSION['basket'][] = ['id' => $product->id,'name' => $product->trackname,'format' => $product->format,'price' => $product->price];
         //add the latest product to the basket stored in the session
-        if($product){
-
-        }
-
         //pass the basket to the basket template
-        #
-        $_SESSION['basket'][] = ['id' => $product->id,'name' => $product->name,'type' => $product->type,'price' => $product->price];
+        
+        // var_dump($_SESSION);
+        // die();
 
-        return $this->view->render($response, 'basket.html.twig', [
-            'basket' => true
-        ]);
+        // unset($_SESSION['basket']);
+        
+        if (isset($_SESSION['loggedin'])) {
+            return $this->view->render($response, 'basket.html.twig', [
+                'basket' => true]);
+                } else {
+                    // unset($_SESSION['basket']);
+                    return $response->withRedirect('/login');
+                }
+        }
     }
-}
+
+// return $this->view->render($response, 'basket.html.twig', [
+//     'basket' => true
+// ]);

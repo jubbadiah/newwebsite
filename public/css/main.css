@@ -327,6 +327,15 @@ select {
     text-align: center;
 }
 
+.basket-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1px;
+    border-bottom-style: solid; 
+    border-color: #a2a8b2;
+    text-align: center;
+}
+
 i {
     color: #000000;
 }
@@ -357,6 +366,12 @@ i {
     background: #eee;
 }
 
-
+.basket-row > div{
+    background: #ddd;
+    padding: 1em;
+  }
+.basket-row > div:nth-child(odd){
+    background: #eee;
+}
 
 
