@@ -30,8 +30,8 @@ class BasketController
         //add the latest product to the basket stored in the session
         //pass the basket to the basket template
 
-        // var_dump($_SESSION);
-        // die();
+        var_dump($_SESSION);
+        die();
 
         // unset($_SESSION['basket']);
         
@@ -57,3 +57,8 @@ class BasketController
     }
 }
 
+// first item array(1) { ["basket"]=> array(1) { [1]=> array(3) { ["name"]=> string(12) "We run tings" ["format"]=> string(3) "MP3" ["price"]=> string(1) "2" } } } 
+
+// removed 3rd item array(3) { ["basket"]=> array(4) { [2]=> array(3) { ["name"]=> string(6) "Danger" ["format"]=> string(3) "MP3" ["price"]=> string(1) "2" } [3]=> array(3) { ["name"]=> string(16) "Human no machine" ["format"]=> string(3) "MP3" ["price"]=> string(1) "2" } [4]=> array(3) { ["name"]=> string(12) "We run tings" ["format"]=> string(3) "WAV" ["price"]=> string(1) "2" } [5]=> array(3) { ["name"]=> string(6) "Danger" ["format"]=> string(3) "WAV" ["price"]=> string(1) "2" } } ["loggedin"]=> bool(true) ["username"]=> string(4) "test" } 
+
+// 5 items array(1) { ["basket"]=> array(5) { [1]=> array(3) { ["name"]=> string(12) "We run tings" ["format"]=> string(3) "MP3" ["price"]=> string(1) "2" } [2]=> array(3) { ["name"]=> string(6) "Danger" ["format"]=> string(3) "MP3" ["price"]=> string(1) "2" } [3]=> array(3) { ["name"]=> string(16) "Human no machine" ["format"]=> string(3) "MP3" ["price"]=> string(1) "2" } [4]=> array(3) { ["name"]=> string(12) "We run tings" ["format"]=> string(3) "WAV" ["price"]=> string(1) "2" } [5]=> array(3) { ["name"]=> string(6) "Danger" ["format"]=> string(3) "WAV" ["price"]=> string(1) "2" } } } 
