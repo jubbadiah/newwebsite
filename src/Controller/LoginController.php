@@ -32,7 +32,7 @@ class LoginController
         $_SESSION['username'] = $user->username;
     
         if ($_SESSION["loggedin"] && $_SESSION['basket']){
-            return $response->withRedirect('/buy');
+            return $response->withRedirect('/basket');
         }
 
         if ($_SESSION["loggedin"]){

@@ -26,25 +26,34 @@ class BasketController
         }
 
         
-        $_SESSION['basket'][] = ['id' => $product->id,'name' => $product->trackname,'format' => $product->format,'price' => $product->price];
+        $_SESSION['basket'][$product->id] = ['name' => $product->trackname,'format' => $product->format,'price' => $product->price];
         //add the latest product to the basket stored in the session
         //pass the basket to the basket template
-        
+
         // var_dump($_SESSION);
         // die();
 
         // unset($_SESSION['basket']);
         
         if (isset($_SESSION['loggedin'])) {
-            return $this->view->render($response, 'basket.html.twig', [
-                'basket' => true]);
-                } else {
-                    // unset($_SESSION['basket']);
-                    return $response->withRedirect('/login');
-                }
+            return $response->withRedirect('/basket');
+        } else {
+            return $response->withRedirect('/login');
         }
     }
 
-// return $this->view->render($response, 'basket.html.twig', [
-//     'basket' => true
-// ]);
+    public function remove($request, $response, $args) {
+        $product = \Jubby\Model\Product::find($args['id']);
+
+
+            if (isset($_SESSION)) {
+                unset($_SESSION['basket'][1]);
+                return $response->withRedirect('/basket');
+
+                var_dump($_SESSION);
+                die();
+            }
+            
+    }
+}
+

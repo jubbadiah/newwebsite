@@ -7,26 +7,28 @@
             <div class="grid-header">Track Name</div>
             <div class="grid-header">Format</div>
             <div class="grid-header">Price</div>
+            <div class="grid-header"></div>
+
         </div>
 
-        {% for item in session.basket %}
+        {% for key, item in session.basket %}
             <div class="basket-row">
                 <div class="row">{{ item.name }}</div>
                 <div class="row">{{ item.format }}</div>
                 <div class="row">£{{ item.price }}</div>
+                <div class="row"><a href="/basket/remove/{{ key }}"><i class="fa fa-minus-square"></i></a></div>            
             </div>
-
         {% endfor %}
 
         {% if error %}
-        <li>
-        <span class="error">Product cannot be added</span>
-        </li>
+        <span class="errorbasket">Product cannot be added</span>
         {% endif %}
-
-
-    <button class="proceed">Proceed to payment</button>
-
-</table>
-
+        
+        <a href="/buy"><button align="left" class="shopping">Continue Shopping</button></a> 
+        
+        <button align="right" class="proceed">Proceed to Payment</button>
 {% endblock %}
+
+            {# <a href="/">
+                <img src="/images/Logo.png">
+            </a> #}

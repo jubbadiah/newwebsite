@@ -8,6 +8,7 @@ $app->get('/buy', 'BuyController:get');
 
 $app->get('/basket', 'BasketController:get'); 
 $app->get('/basket/add/{id:[0-9]+}', 'BasketController:add'); 
+$app->get('/basket/remove/{id:[0-9]+}', 'BasketController:remove'); 
 
 
 $app->get('/contact', 'ContactController:get'); 
@@ -24,3 +25,4 @@ $app->post('/signup', 'SignupController:post');
 $app->get('/account', 'AccountController:get'); 
 
 $app->get('/logout', 'LogoutController:get');
+
