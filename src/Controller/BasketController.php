@@ -25,16 +25,11 @@ class BasketController
             ]);
         }
 
-        
         $_SESSION['basket'][$product->id] = ['name' => $product->trackname,'format' => $product->format,'price' => $product->price];
+
+        $this->updateBasketTotal();
+
         //add the latest product to the basket stored in the session
-        //pass the basket to the basket template
-
-        var_dump($_SESSION);
-        die();
-
-        // unset($_SESSION['basket']);
-        
         if (isset($_SESSION['loggedin'])) {
             return $response->withRedirect('/basket');
         } else {
@@ -43,22 +38,24 @@ class BasketController
     }
 
     public function remove($request, $response, $args) {
-        $product = \Jubby\Model\Product::find($args['id']);
-
 
             if (isset($_SESSION)) {
-                unset($_SESSION['basket'][1]);
+                unset($_SESSION['basket'][$args['id']]);
+                $this->updateBasketTotal();
                 return $response->withRedirect('/basket');
-
-                var_dump($_SESSION);
-                die();
             }
-            
+    }
+
+    private function updateBasketTotal()
+    {
+        $total = 0;
+
+        foreach ($_SESSION['basket'] as $item) {
+            $total += $item['price'];
+        }
+
+        $_SESSION['basketTotal'] = $total;
     }
 }
-
-// first item array(1) { ["basket"]=> array(1) { [1]=> array(3) { ["name"]=> string(12) "We run tings" ["format"]=> string(3) "MP3" ["price"]=> string(1) "2" } } } 
-
-// removed 3rd item array(3) { ["basket"]=> array(4) { [2]=> array(3) { ["name"]=> string(6) "Danger" ["format"]=> string(3) "MP3" ["price"]=> string(1) "2" } [3]=> array(3) { ["name"]=> string(16) "Human no machine" ["format"]=> string(3) "MP3" ["price"]=> string(1) "2" } [4]=> array(3) { ["name"]=> string(12) "We run tings" ["format"]=> string(3) "WAV" ["price"]=> string(1) "2" } [5]=> array(3) { ["name"]=> string(6) "Danger" ["format"]=> string(3) "WAV" ["price"]=> string(1) "2" } } ["loggedin"]=> bool(true) ["username"]=> string(4) "test" } 
-
-// 5 items array(1) { ["basket"]=> array(5) { [1]=> array(3) { ["name"]=> string(12) "We run tings" ["format"]=> string(3) "MP3" ["price"]=> string(1) "2" } [2]=> array(3) { ["name"]=> string(6) "Danger" ["format"]=> string(3) "MP3" ["price"]=> string(1) "2" } [3]=> array(3) { ["name"]=> string(16) "Human no machine" ["format"]=> string(3) "MP3" ["price"]=> string(1) "2" } [4]=> array(3) { ["name"]=> string(12) "We run tings" ["format"]=> string(3) "WAV" ["price"]=> string(1) "2" } [5]=> array(3) { ["name"]=> string(6) "Danger" ["format"]=> string(3) "WAV" ["price"]=> string(1) "2" } } } 
+        // var_dump($_SESSION);
+        // die();

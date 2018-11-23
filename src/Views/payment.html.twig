@@ -1,0 +1,62 @@
+{% extends "partials/base.html.twig" %}
+{% block title %}payment{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="/css/stripe.css">
+
+<form action="/charge" method="post" id="payment-form">
+  <div class="form-row">
+
+    <h2>Checkout</h2>
+    <ul>
+        <label>
+        <li>First name: <input type="text" placeholder="First name" name="First name" required id="First name"></li>
+        </label>
+        
+        <label>
+        <li>Last name: <input type="text" placeholder="Last name" name="Last name" required id="Last name"></li>
+        </label>
+        
+        <label>
+        <li>Delivery address: <input type="text" placeholder="Delivery address" name="Delivery address" required id="Delivery address"></li>
+        </label>
+        
+        <label>
+        <li>Town/City: <input type="text" placeholder="Town/City" name="Town/City" required id="Town/City"></li>
+        </label>
+        
+        <label>
+        <li>State or county: <input type="text" placeholder="State or county" name="State or county" required id="State or county"></li>
+        </label>
+        
+        <label>
+        <li>Post or zip code: <input type="text" placeholder="Post or zip code " name="Post or zip code" required id="Post or zip code"></li>
+        </label>
+        
+        <label>
+        <li>Country: <input type="text" placeholder="Country" name="Country" required id="Country"></li>
+        </label>
+        
+        <label>
+        <li>Telephone number: <input type="text" placeholder="Telephone number" required id="phone" maxlength="15" required></li>
+        </label>
+    </ul>
+
+    <label for="card-element">
+      Credit / Debit card
+    </label>
+    <div id="card-element">
+      <!-- A Stripe Element will be inserted here. -->
+    </div>
+
+    <div class="grid-header">Total £{{ session.basketTotal }}</div>
+
+    <!-- Used to display form errors. -->
+    <div id="card-errors" role="alert"></div>
+  </div>
+  <button>Submit Payment</button>
+</form>
+<script src="https://js.stripe.com/v3/"></script>
+<script type="text/javascript" src="/js/stripe.js"></script>
+{% endblock %}
+

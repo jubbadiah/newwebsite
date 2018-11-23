@@ -8,25 +8,32 @@
             <div class="grid-header">Format</div>
             <div class="grid-header">Price</div>
             <div class="grid-header"></div>
-
         </div>
 
         {% for key, item in session.basket %}
-            <div class="basket-row">
-                <div class="row">{{ item.name }}</div>
-                <div class="row">{{ item.format }}</div>
-                <div class="row">£{{ item.price }}</div>
-                <div class="row"><a href="/basket/remove/{{ key }}"><i class="fa fa-minus-square"></i></a></div>            
-            </div>
+            
+        <div class="basket-row">
+            <div class="row">{{ item.name }}</div>
+            <div class="row">{{ item.format }}</div>
+            <div class="row">£{{ item.price }}</div>
+            <div class="row"><a href="/basket/remove/{{ key }}"><i class="fa fa-minus-square"></i></a></div>
+        </div>
+        
+
         {% endfor %}
+
+        <div class="grid-basket">
+            <a href="/buy"><button class="shopping">Continue Shopping</button></a>
+            <div class="grid-header"></div>
+            <div class="grid-header">Total £{{ session.basketTotal }}</div>
+            <a href="/payment"><button class="proceed">Proceed to Payment</button></a>
+        </div>
 
         {% if error %}
         <span class="errorbasket">Product cannot be added</span>
         {% endif %}
         
-        <a href="/buy"><button align="left" class="shopping">Continue Shopping</button></a> 
         
-        <button align="right" class="proceed">Proceed to Payment</button>
 {% endblock %}
 
             {# <a href="/">

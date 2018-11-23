@@ -66,6 +66,16 @@ $container['LogoutController'] = function($container) {
     return new \Jubby\Controller\LogoutController($view);
 };
 
+$container['PaymentController'] = function($container) {
+    $view = $container->get('view');
+    return new \Jubby\Controller\PaymentController($view);
+};
+
+$container['ChargeController'] = function($container) {
+    $view = $container->get('view');
+    return new \Jubby\Controller\ChargeController($view);
+};
+
 
 $capsule = new \Illuminate\Database\Capsule\Manager;
 $capsule->addConnection($container['settings']['db']);

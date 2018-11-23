@@ -1,28 +1,5 @@
 stop being shit
 
-**understand the below**
-What is PHP  
-Echo
-Var
-Arrays
-if / else / switch
-for & each
-While loops
-Get
-Post
-Send email
-
 **complete on website**
-. create tracks table
 
-. create admin pages for adding tracks and products
-
-. get stripe set up
-
-. look to see if user accounts have a type
-
-
-
-!Ask for log in before being able to add to basket!
-
-!add type and price to basket in grid!
+Create additional information for the form (first/lastname/delivery address)

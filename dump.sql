@@ -30,7 +30,7 @@ CREATE TABLE `products`
   `bpm` decimal
 (10,0) DEFAULT NULL,
   `price` decimal
-(10,0) DEFAULT NULL,
+(10,2) DEFAULT NULL,
   `genre` text,
   `format` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -45,15 +45,15 @@ LOCK TABLES `products` WRITE;
 INSERT INTO `
 products`
 VALUES
-  (1, 'We run tings', '00:04:06', 140, 2, 'Bassline', 'MP3'),
-  (2, 'Danger', '00:03:54', 140, 2, 'Bassline', 'MP3'),
-  (3, 'Human no machine', '00:04:06', 140, 2, 'Bassline', 'MP3'),
-  (4, 'We run tings', '00:04:06', 140, 2, 'Bassline', 'WAV'),
-  (5, 'Danger', '00:03:54', 140, 2, 'Bassline', 'WAV'),
-  (6, 'Human no machine', '00:04:06', 140, 2, 'Bassline', 'WAV'),
-  (7, 'We run tings', '00:04:06', 140, 2, 'Bassline', 'AAC'),
-  (8, 'Danger', '00:03:54', 140, 2, 'Bassline', 'AAC'),
-  (9, 'Human no machine', '00:04:06', 140, 2, 'Bassline', 'AAC');
+  (1, 'We run tings', '00:04:06', 140, 1.99, 'Bassline', 'MP3'),
+  (2, 'Danger', '00:03:54', 140, 1.99, 'Bassline', 'MP3'),
+  (3, 'Human no machine', '00:04:06', 140, 1.99, 'Bassline', 'MP3'),
+  (4, 'We run tings', '00:04:06', 140, 1.99, 'Bassline', 'WAV'),
+  (5, 'Danger', '00:03:54', 140, 1.99, 'Bassline', 'WAV'),
+  (6, 'Human no machine', '00:04:06', 140, 1.99, 'Bassline', 'WAV'),
+  (7, 'We run tings', '00:04:06', 140, 1.99, 'Bassline', 'AAC'),
+  (8, 'Danger', '00:03:54', 140, 1.99, 'Bassline', 'AAC'),
+  (9, 'Human no machine', '00:04:06', 140, 1.99, 'Bassline', 'AAC');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 --

@@ -13,6 +13,10 @@ $app->get('/basket/remove/{id:[0-9]+}', 'BasketController:remove');
 
 $app->get('/contact', 'ContactController:get'); 
 
+$app->get('/payment', 'PaymentController:get'); 
+$app->post('/charge', 'ChargeController:post'); 
+
+
 $app->get('/about', 'AboutController:get'); 
 
 $app->get('/login', 'LoginController:get');
