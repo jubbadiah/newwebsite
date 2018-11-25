@@ -24,7 +24,7 @@ function check_info() {
     if (username != "") {
 
         if (username.length < 3) {
-            errorSpan.innerHTML = 'Username must be at least 3 charecters';
+            errorSpan.innerHTML = 'Username must be at least 3 characters';
             return false;
         }
     }

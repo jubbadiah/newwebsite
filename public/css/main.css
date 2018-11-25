@@ -88,6 +88,7 @@ button:hover {
 .wrappercontainer {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
     text-align: center;
     font-size: 35px;
@@ -103,9 +104,9 @@ button:hover {
     justify-content: space-between;
 }
 
-.wrapper:not(:last-child) {
+/* .wrapper:not(:last-child) {
     border-right: solid 2px #000000;
-}
+} */
 
 #so{
   
