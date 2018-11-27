@@ -1,0 +1,35 @@
+version: '2'
+
+services:
+  php:
+    container_name: web
+    build: ./php
+    ports:
+      - '80:80'
+    restart: always
+    volumes:
+        - /home/lgoodinson/Projects/newwebsite/:/var/www/html/:z
+    links:
+      - "db"
+  db:
+    container_name: database
+    build: ./db
+    environment:
+      # - MYSQL_DATABASE=mondo
+      - MYSQL_USER=avuser
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password
+    # volumes:
+      #- /home/lgoodinson/Projects/newwebsite/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+    ports:
+      - "3306:3306" 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links: 
+        - db:db
+    ports:
+        - 8000:80
+    environment:
+        MYSQL_USER: avuser
+        MYSQL_PASSWORD: password
+        MYSQL_ROOT_PASSWORD: password
