@@ -22,9 +22,10 @@ $app->get('/about', 'AboutController:get');
 $app->get('/login', 'LoginController:get');
 $app->post('/login', 'LoginController:post');
 
+$app->map(['GET', 'POST'], '/signup', 'SignupController:register');
 
-$app->get('/signup', 'SignupController:get'); 
-$app->post('/signup', 'SignupController:post'); 
+// $app->get('/signup', 'SignupController:get'); 
+// $app->post('/signup', 'SignupController:post'); 
 
 $app->get('/account', 'AccountController:get'); 
 
