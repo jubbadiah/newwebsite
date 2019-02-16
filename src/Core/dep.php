@@ -51,6 +51,8 @@ $container['view'] = function ($container) {
 };
 
 $container['FormFactory'] = function($container) {
+    $validator = Validation::createValidator();
+
     $formFactory = Forms::createFormFactoryBuilder()
         ->addExtension(new CsrfExtension($container->get('CSRFManager')))
         ->addExtension(new ValidatorExtension($validator))
