@@ -7,12 +7,12 @@ use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Exception\UnexpectedValueException;
 
-class UniqueUsernameValidator
+class UniqueEmailValidator extends ConstraintValidator
 {
     public function validate($value, Constraint $constraint)
     {
-        if (!$constraint instanceof UniqueUsername) {
-            throw new UnexpectedTypeException($constraint, UniqueUsername::class);
+        if (!$constraint instanceof UniqueEmail) {
+            throw new UnexpectedTypeException($constraint, UniqueEmail::class);
         }
 
         // custom constraints should ignore null and empty values to allow
@@ -29,11 +29,10 @@ class UniqueUsernameValidator
             // throw new UnexpectedValueException($value, 'string|int');
         }
 
-        $user = \Jubby\Model\User::where('username', $value)->first();
+        $user = \Jubby\Model\User::where('email', $value)->first();
 
         if (!is_null($user)) {
             $this->context->buildViolation($constraint->message)
-                ->setParameter('{{ username }}', $value)
                 ->addViolation();
         }
     }

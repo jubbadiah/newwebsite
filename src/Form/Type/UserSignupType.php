@@ -3,6 +3,7 @@
 namespace Jubby\Form\Type;
 
 use Jubby\Form\Model\User;
+use Jubby\Form\Constraints\UniqueEmail;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -19,9 +20,11 @@ class UserSignupType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'constraints' => new NotBlank(),
+                'constraints' => [
+                    new NotBlank(),
+                    new UniqueEmail()
+                ],
             ])
-            ->add('username', TextType::class)
             ->add('plainPassword', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'first_options'  => ['label' => 'Password'],

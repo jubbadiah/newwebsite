@@ -4,7 +4,6 @@ $config = [
     'settings' => [
         'displayErrorDetails' => true,
         'determineRouteBeforeAppMiddleware' => false,
-        'displayErrorDetails' => true,
         'db' => [
             'driver' => 'mysql',
             'host' => 'database',
