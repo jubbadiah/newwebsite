@@ -1,11 +1,13 @@
 <?php
 namespace Jubby\Controller;
 
+use Jubby\View\View;
+
 class LogoutController
 {
     private $view;
 
-    public function __construct(\Slim\Views\Twig $view)
+    public function __construct(View $view)
     {
         $this->view = $view;
     }

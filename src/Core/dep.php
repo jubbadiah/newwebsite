@@ -22,7 +22,7 @@ $container['view'] = function ($container) {
     $vendorDirectory = realpath(__DIR__.'/../../vendor');
     $appVariableReflection = new \ReflectionClass('\Symfony\Bridge\Twig\AppVariable');
     $vendorTwigBridgeDirectory = dirname($appVariableReflection->getFileName());
-    $viewsDirectory = realpath(__DIR__.'/../Views');
+    $viewsDirectory = realpath(__DIR__.'/../templates');
 
     $twig = new Environment(new FilesystemLoader([
         $viewsDirectory,
@@ -47,7 +47,9 @@ $container['view'] = function ($container) {
 
     $twig->addGlobal('session', $_SESSION);
 
-    return $twig;
+    $view = new Jubby\View\Twig($twig);
+    
+    return $view;
 };
 
 $container['FormFactory'] = function($container) {

@@ -6,13 +6,14 @@ use Jubby\Model\User;
 use Slim\Views\Twig;
 use Jubby\Form\Model\User as UserFormModel;
 use Jubby\Form\Type\UserSignupType;
+use Jubby\View\View;
 
 class SignupController
 {
     private $view;
     private $formFactory;
 
-    public function __construct($view, $formFactory)
+    public function __construct(View $view, $formFactory)
     {
         $this->view = $view;
         $this->formFactory = $formFactory;
@@ -48,12 +49,9 @@ class SignupController
 
         if ($form->isSubmitted() && $form->isValid()) {
             die('form posted');
-        } else {
-            // var_dump($form->getErrors());
-            // die();
         }
 
-        return $this->view->render('signup.html.twig', [
+        return $this->view->render($response, 'signup.html.twig', [
             'form' => $form->createView()
         ]);
     }
