@@ -5,7 +5,6 @@ namespace Jubby\Form\Model;
 class User
 {
     private $id;
-    private $username;
     private $email;
     private $password;
     private $plainPassword;
@@ -18,16 +17,6 @@ class User
     public function setEmail($email)
     {
         $this->email = $email;
-    }
-
-    public function getUsername()
-    {
-        return $this->username;
-    }
-
-    public function setUsername($username)
-    {
-        $this->username = $username;
     }
 
     public function getPlainPassword()

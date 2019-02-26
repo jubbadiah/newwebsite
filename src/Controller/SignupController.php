@@ -7,6 +7,7 @@ use Slim\Views\Twig;
 use Jubby\Form\Model\User as UserFormModel;
 use Jubby\Form\Type\UserSignupType;
 use Jubby\View\View;
+use Symfony\Component\Form\FormError;
 
 class SignupController
 {
@@ -48,7 +49,18 @@ class SignupController
         $form->handleRequest();
 
         if ($form->isSubmitted() && $form->isValid()) {
-            die('form posted');
+            $userModel = new User;
+
+            $userModel->email = $user->getEmail();
+            $userModel->password = password_hash($user->getPlainPassword(), PASSWORD_DEFAULT);
+
+            if ($userModel->save()) {
+                return $this->view->render($response, 'signup.html.twig', [
+                    'completed' => true,
+                ]);
+            }
+
+            $form->addError(new FormError('Unable to create. Please try again later'));
         }
 
         return $this->view->render($response, 'signup.html.twig', [
