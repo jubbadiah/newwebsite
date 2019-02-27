@@ -103,7 +103,8 @@ $container['AboutController'] = function($container) {
 
 $container['LoginController'] = function($container) {
     $view = $container->get('view');
-    return new \Jubby\Controller\LoginController($view);
+    $formFactory = $container->get('FormFactory');
+    return new \Jubby\Controller\LoginController($view, $formFactory);
 };
 
 $container['SignupController'] = function($container) {
