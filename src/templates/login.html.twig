@@ -1,0 +1,16 @@
+{% extends "partials/base.html.twig" %}
+{% block title %}Login{% endblock %}
+
+
+{% block content %}
+<!-- checking info has been added -->
+<script type="text/javascript" src="/js/signup.js"></script>
+
+<div class="login" align="center">
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+
+        <input type="submit" value="Login">
+    {{ form_end(form) }}
+</div>
+{% endblock %}

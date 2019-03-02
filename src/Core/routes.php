@@ -19,12 +19,9 @@ $app->post('/charge', 'ChargeController:post');
 
 $app->get('/about', 'AboutController:get'); 
 
-$app->get('/login', 'LoginController:get');
-$app->post('/login', 'LoginController:post');
+$app->map(['GET', 'POST'], '/login', 'LoginController:login');
 
-
-$app->get('/signup', 'SignupController:get'); 
-$app->post('/signup', 'SignupController:post'); 
+$app->map(['GET', 'POST'], '/signup', 'SignupController:register');
 
 $app->get('/account', 'AccountController:get'); 
 

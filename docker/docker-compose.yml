@@ -8,19 +8,19 @@ services:
       - '80:80'
     restart: always
     volumes:
-        - /home/lgoodinson/Projects/newwebsite/:/var/www/html/:z
+        - ../:/var/www/html/:z
     links:
       - "db"
   db:
+    image: mysql:5.7
     container_name: database
-    build: ./db
     environment:
       # - MYSQL_DATABASE=mondo
       - MYSQL_USER=avuser
       - MYSQL_PASSWORD=password
       - MYSQL_ROOT_PASSWORD=password
-    # volumes:
-      #- /home/lgoodinson/Projects/newwebsite/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+    volumes:
+      - ./db/dump.sql:/docker-entrypoint-initdb.d/dump.sql
     ports:
       - "3306:3306" 
   phpmyadmin:

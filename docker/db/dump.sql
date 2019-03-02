@@ -3,6 +3,7 @@
 -- Host: localhost    Database: av
 -- ------------------------------------------------------
 -- Server version	5.7.22-0ubuntu0.17.10.1
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -13,24 +14,23 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
 --
 -- Table structure for table `products`
 --
-CREATE DATABASE `av`;
+
+CREATE DATABASE IF NOT EXISTS `av`;
 USE `av`;
+
 DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `products`
-(
-  `id` int
-(11) DEFAULT NULL,
+CREATE TABLE `products` (
+  `id` int(11) DEFAULT NULL,
   `trackname` text,
   `tracklength` time DEFAULT NULL,
-  `bpm` decimal
-(10,0) DEFAULT NULL,
-  `price` decimal
-(10,2) DEFAULT NULL,
+  `bpm` decimal(10,0) DEFAULT NULL,
+  `price` decimal(10,0) DEFAULT NULL,
   `genre` text,
   `format` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -42,38 +42,22 @@ CREATE TABLE `products`
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `
-products`
-VALUES
-  (1, 'We run tings', '00:04:06', 140, 1.99, 'Bassline', 'MP3'),
-  (2, 'Danger', '00:03:54', 140, 1.99, 'Bassline', 'MP3'),
-  (3, 'Human no machine', '00:04:06', 140, 1.99, 'Bassline', 'MP3'),
-  (4, 'We run tings', '00:04:06', 140, 1.99, 'Bassline', 'WAV'),
-  (5, 'Danger', '00:03:54', 140, 1.99, 'Bassline', 'WAV'),
-  (6, 'Human no machine', '00:04:06', 140, 1.99, 'Bassline', 'WAV'),
-  (7, 'We run tings', '00:04:06', 140, 1.99, 'Bassline', 'AAC'),
-  (8, 'Danger', '00:03:54', 140, 1.99, 'Bassline', 'AAC'),
-  (9, 'Human no machine', '00:04:06', 140, 1.99, 'Bassline', 'AAC');
+INSERT INTO `products` VALUES (1,'We run tings','00:04:06',140,2,'Bassline','MP3'),(2,'Danger','00:03:54',140,2,'Bassline','MP3'),(3,'Human no machine','00:04:06',140,2,'Bassline','MP3'),(4,'We run tings','00:04:06',140,2,'Bassline','WAV'),(5,'Danger','00:03:54',140,2,'Bassline','WAV'),(6,'Human no machine','00:04:06',140,2,'Bassline','WAV'),(7,'We run tings','00:04:06',140,2,'Bassline','AAC'),(8,'Danger','00:03:54',140,2,'Bassline','AAC'),(9,'Human no machine','00:04:06',140,2,'Bassline','AAC');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
+
 --
 -- Table structure for table `users`
 --
+
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users`
-(
-  `id` int
-(255) NOT NULL AUTO_INCREMENT,
-  `username` varchar
-(255) NOT NULL,
-  `password` varchar
-(255) NOT NULL,
-  `email` varchar
-(255) NOT NULL,
-  PRIMARY KEY
-(`id`)
+CREATE TABLE `users` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -83,10 +67,7 @@ CREATE TABLE `users`
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `
-users`
-VALUES
-  (12, 'test', '$2y$10$OC0L0jTl0CNx.ELYGS8iNuAM8HtrWbP0rPIVfEixfi/EfHleuou2e', 'test@test.com');
+INSERT INTO `users` VALUES (12, 'test@test.com', '$2y$10$OC0L0jTl0CNx.ELYGS8iNuAM8HtrWbP0rPIVfEixfi/EfHleuou2e');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
