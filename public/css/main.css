@@ -62,14 +62,20 @@ form {
     margin: 0 auto;
     width: 210px;
     text-align: left;
+
 }
 
-#user_signup ul li {
+.emailerror {
     color: #FF0000;
     list-style-type: none;
-    width: 500px;
-    text-align: left;
 }
+
+
+/* #user_signup ul li {
+    color: #FF0000;
+    list-style-type: none;
+
+} */
 
 input {
     text-align: center;

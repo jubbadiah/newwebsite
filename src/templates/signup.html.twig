@@ -17,9 +17,13 @@
 
         <input type="submit" value="Sign Up">
 
-    {# <div class="my-custom-class-for-errors">
+    <div class="emailerror">
+    {{ form_errors(form.email) }}
+    </div>
+
+    <div class="passerror">
     {{ form_errors(form) }}
-    </div> #}
+    </div>
 
     {{ form_end(form) }}
 
