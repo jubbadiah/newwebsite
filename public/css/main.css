@@ -68,6 +68,13 @@ form {
 .emailerror {
     color: #FF0000;
     list-style-type: none;
+    text-align: center;
+}
+
+.passerror {
+    color: #FF0000;
+    list-style-type: none;
+    text-align: center;
 }
 
 

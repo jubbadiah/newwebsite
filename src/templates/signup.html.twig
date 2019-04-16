@@ -13,22 +13,15 @@
     {{ form_start(form) }}
     {{ form_widget(form) }}
 
+    <input type="submit" value="Sign Up">
 
+    <div class="emailerror">{{ form_errors(form.email) }}</div>
 
-        <input type="submit" value="Sign Up">
-
-    <div class="emailerror">
-    {{ form_errors(form.email) }}
-    </div>
-
-    <div class="passerror">
-    {{ form_errors(form) }}
-    </div>
+    <div class="passerror">{{ form_errors(form.plainPassword) }}</div>
 
     {{ form_end(form) }}
 
     {% endif %}
-
 
 
 {% endblock %}
