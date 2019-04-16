@@ -13,9 +13,18 @@
     {{ form_start(form) }}
     {{ form_widget(form) }}
 
+
+
         <input type="submit" value="Sign Up">
+
+    {# <div class="my-custom-class-for-errors">
+    {{ form_errors(form) }}
+    </div> #}
+
     {{ form_end(form) }}
 
     {% endif %}
+
+
 
 {% endblock %}

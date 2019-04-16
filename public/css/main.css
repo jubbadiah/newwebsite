@@ -64,6 +64,13 @@ form {
     text-align: left;
 }
 
+#user_signup ul li {
+    color: #FF0000;
+    list-style-type: none;
+    width: 500px;
+    text-align: left;
+}
+
 input {
     text-align: center;
 }
@@ -108,7 +115,7 @@ button:hover {
     border-right: solid 2px #000000;
 } */
 
-#so{
+#so {
   
     top: 20px;
     left: 20px;
@@ -119,7 +126,7 @@ button:hover {
     outline: none;
 }
   
-#playSound{
+#playSound {
     top: 200px;
     left: 20px;
     width: 20px;
@@ -127,7 +134,7 @@ button:hover {
     outline: none;
 }
   
-#stopSound{
+#stopSound {
   
     top: 200px;
     left: 50px;
@@ -136,7 +143,7 @@ button:hover {
     outline: none;
 }
 
-.playButton{
+.playButton {
     background-color: #ffffff;
     border: none;
     height: 32px;
@@ -147,7 +154,7 @@ button:hover {
     outline: none;
 }
 
-.muteButton{
+.muteButton {
     background-color: white;
     border: none;
     height: 32px;
@@ -165,7 +172,7 @@ button:hover {
     outline: none;
 }
 
-.timebox{
+.timebox {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -177,7 +184,7 @@ button:hover {
     margin-bottom: 10px;
 }
 
-.progressBar{
+.progressBar {
     height: 20px;
     background-color: #fff;
     width: 120px;
@@ -214,7 +221,7 @@ h2 {
     text-align: center;
 }
 
-h2 a{
+h2 a {
     color: #000000;
     text-decoration: none;
 }
@@ -243,14 +250,14 @@ p {
     padding-bottom: 40px;
 }
 
-li {
+/* li {
     list-style-type: none;
     margin: 50px auto;
     width: 100%;
     float:center;
     font-size: 16px;
     text-align: left;
-}
+} */
 
 footer {
     text-align: center;
@@ -270,11 +277,7 @@ footer {
     opacity: 0.5;
 }
 
-.error {
-    font-weight: bold;
-    color: #FF0000;
-    font-size: 15px;
-}
+
 
 .errorbasket {
     display: block;
