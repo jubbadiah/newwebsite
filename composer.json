@@ -2,7 +2,7 @@
     "name": "jubby/newwebsite",
     "require": {
         "slim/slim": "^3.9",
-        "illuminate/database": "~5.1",
+        "illuminate/database": "~6.20",
         "respect/validation": "^1.1",
         "symfony/form": "^4.2",
         "symfony/validator": "^4.2",
